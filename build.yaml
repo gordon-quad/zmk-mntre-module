@@ -28,3 +28,15 @@ include:
     snippet: rp2-boot-mode-retention studio-rpc-usb-uart reform-pocket
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: reform_pocket
+  - board: reform_ortho
+    snippet: rp2-boot-mode-retention studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: reform_ortho_standalone
+  - board: reform_ortho
+    snippet: rp2-boot-mode-retention studio-rpc-usb-uart reform-classic
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: reform_ortho_classic
+  - board: reform_ortho
+    snippet: rp2-boot-mode-retention studio-rpc-usb-uart reform-next
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: reform_ortho_next

@@ -1,0 +1,6 @@
+board:
+  name: reform_ortho
+  full_name: Reform Ortho
+  vendor: mnt
+  socs:
+  - name: rp2040
