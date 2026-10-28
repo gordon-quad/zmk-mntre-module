@@ -45,3 +45,22 @@ config RP2040_SLEEP
     default y
     depends on DT_HAS_RASPBERRYPI_RP2040_SLEEP_ENABLED
     depends on SOC_RP2040
+
+config MNT_LED_INDICATORS
+    bool "LED indicators driven by keyboard state and the host"
+    default y
+    depends on DT_HAS_MNT_LED_INDICATORS_ENABLED
+    select LED_STRIP
+
+if MNT_LED_INDICATORS
+
+config MNT_LED_INDICATORS_HOST
+    bool "Let the host set the LED channels no indicator owns (via zmk-raw-hid)"
+    default y
+    depends on RAW_HID
+
+config MNT_LED_INDICATORS_INIT_PRIORITY
+    int "LED indicators init priority"
+    default 94
+
+endif # MNT_LED_INDICATORS

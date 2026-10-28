@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+description: |
+  Drives an LED strip from keyboard state and the host. Each child is a signal
+  that paints its color on one LED while active; the channels a signal's color
+  touches belong to the firmware, every other channel to the host.
+
+compatible: "mnt,led-indicators"
+
+properties:
+  led-strip:
+    type: phandle
+    required: true
+
+child-binding:
+  description: Indicator signal
+  properties:
+    led:
+      type: int
+      required: true
+      description: Index of the LED in the strip
+    color:
+      type: int
+      required: true
+      description: 0xRRGGBB shown while active; non-zero bytes are the channels it owns
+    hid-indicators:
+      type: int
+      description: HID_INDICATOR_* bits; active while any of them is set
+    layers:
+      type: array
+      description: Layer indices; active while any of them is active
